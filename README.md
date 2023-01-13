@@ -1,0 +1,1 @@
+# Hardhat Lottery App
