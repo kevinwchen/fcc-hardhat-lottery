@@ -1,6 +1,13 @@
 const { ethers } = require("hardhat")
 
 const networkConfig = {
+    31337: {
+        name: "hardhat",
+        entranceFee: ethers.utils.parseEther("0.01"),
+        gasLane: "0x0000000000000000000000000000000000000000000000000000000000000000",
+        callbackGasLimit: "500000", // 500k gas
+        interval: "30",
+    },
     5: {
         name: "goerli",
         vrfCoordinatorV2: "0x2ca8e0c643bde4c2e08ab1fa0da3401adad7734d",
@@ -10,13 +17,8 @@ const networkConfig = {
         callbackGasLimit: "500000", // 500k gas
         interval: "30",
     },
-    31337: {
-        name: "hardhat",
-        entranceFee: ethers.utils.parseEther("0.01"),
-        gasLane: "0x",
-        callbackGasLimit: "500000", // 500k gas
-        interval: "30",
-    },
 }
 
 const developmentChains = ["hardhat", "localhost"]
+
+module.exports = { networkConfig, developmentChains }
