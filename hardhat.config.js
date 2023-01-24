@@ -19,10 +19,10 @@ module.exports = {
             blockConfirmations: 1,
         },
         goerli: {
-            chainId: 5,
-            blockConfirmations: 6,
             url: GOERLI_RPC_URL,
             accounts: [PRIVATE_KEY],
+            chainId: 5,
+            blockConfirmations: 6,
         },
     },
     solidity: "0.8.7",
@@ -33,5 +33,12 @@ module.exports = {
         player: {
             default: 1,
         },
+    },
+    gasReporter: {
+        enabled: false,
+        currency: "USD",
+        outputFile: "gas-report.txt",
+        noColors: true,
+        coinmarketcap: COINMARKETCAP_API_KEY,
     },
 }
